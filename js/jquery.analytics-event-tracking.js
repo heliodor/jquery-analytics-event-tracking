@@ -32,17 +32,17 @@
 
             function bindEvents()
             {
-				_self.find(settings.selector).on('click', function(e)
+				_self.on('click', settings.selector, function(e)
 				{
 					trackEvent('click', $(this));
 				});
 
-				_self.find(settings.selector + '-blur').on('blur', function(e)
+				_self.on('blur', settings.selector + '-blur', function(e)
 				{
 					trackEvent('blur', $(this));
 				});
 
-				_self.find(settings.selector + '-complete').on('blur', function(e)
+				_self.on('blur', settings.selector + '-complete', function(e)
 				{
 					if($.trim($(this).val()) != '')
 					{
@@ -50,17 +50,17 @@
 					}
 				});
 
-				_self.find(settings.selector + '-focus').on('focus', function(e)
+				_self.on('focus', settings.selector + '-focus', function(e)
 				{
 					trackEvent('focus', $(this));
 				});
 
-				_self.find(settings.selector + '-mouseover').on('mouseover', function(e)
+				_self.on('mouseover', settings.selector + '-mouseover', function(e)
 				{
 					trackEvent('mouseover', $(this));
 				});
 
-				_self.find(settings.selector + '-change').on('change', function(e)
+				_self.on('change', settings.selector + '-change', function(e)
 				{
 					trackEvent('change', $(this));
 				});

@@ -13,7 +13,7 @@ Usage
 
 Use `$('body').analyticsEventTracking();` to initialize the plugin. 
 
-All elements in the body tag which contain the class `.track` will be tracked.
+All current and future elements in the body tag which contain the class `.track` will be tracked.
 
 Add `data-category="category-name"` to specify the category (default: 'General')  
 Add `data-action="click"` to specify the action (default: 'click')  
