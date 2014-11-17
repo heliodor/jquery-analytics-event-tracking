@@ -11,27 +11,27 @@
 
 (function($) 
 {
-    $.fn.analyticsEventTracking = function(options) 
-    {
-        var settings = $.extend({
-            selector:			'.track',
-            default_category: 	'General'
-        }, options);
+	$.fn.analyticsEventTracking = function(options) 
+	{
+		var settings = $.extend({
+			selector:			'.track',
+			default_category: 	'General'
+		}, options);
 
-        if(typeof ga !== 'function')
-    	{
-    		log('Google Analytics (analytics.js) is not initialized.');
-    		return false;
-    	}
+		if(typeof ga !== 'function')
+		{
+			log('Google Analytics (analytics.js) is not initialized.');
+			return false;
+		}
 
-        return $(this).each(function() 
-        {
-        	var _self = $(this);
+		return $(this).each(function() 
+		{
+			var _self = $(this);
 
-        	bindEvents();
+			bindEvents();
 
-            function bindEvents()
-            {
+			function bindEvents()
+			{
 				_self.on('click', settings.selector, function(e)
 				{
 					trackEvent('click', $(this));
@@ -75,7 +75,7 @@
 
 				ga('send', 'event', category, action, label, value);
 			}
-        });
+		});
 
 		function log(message)
 		{
@@ -84,5 +84,5 @@
 				console.log(message);
 			}
 		}
-    }
+	}
 }(jQuery));
